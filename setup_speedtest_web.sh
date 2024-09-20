@@ -227,11 +227,11 @@ cat <<'EOT' > ~/speedtest_web/templates/index.html
                 const server = data.server;
                 const testTime = new Date().toLocaleString();  // Use local time
                 document.getElementById('results').innerHTML = `
-                    <div class="result-box test-time"><strong>Test Date/Time:</strong> ${testTime}</div>
-                    <div class="result-box server"><strong>Server:</strong> ${server.name}, ${server.location}</div>
-                    <div class="result-box ping"><strong>Ping:</strong> ${data.ping} ms</div>
-                    <div class="result-box download-speed"><strong>Download:</strong> ${data.download.toFixed(2)} Mbps</div>
-                    <div class="result-box upload-speed"><strong>Upload:</strong> ${data.upload.toFixed(2)} Mbps</div>
+                    <div class="result-box test-time"><strong>Test Date/Time:</strong> \${testTime}</div>
+                    <div class="result-box server"><strong>Server:</strong> \${server.name}, \${server.location}</div>
+                    <div class="result-box ping"><strong>Ping:</strong> \${data.ping} ms</div>
+                    <div class="result-box download-speed"><strong>Download:</strong> \${data.download.toFixed(2)} Mbps</div>
+                    <div class="result-box upload-speed"><strong>Upload:</strong> \${data.upload.toFixed(2)} Mbps</div>
                 `;
                 document.getElementById('results').style.display = 'block';
                 document.querySelector('button#download-pdf').style.display = 'block';
@@ -265,7 +265,7 @@ cat <<'EOT' > ~/speedtest_web/templates/index.html
                 const a = document.createElement('a');
                 a.href = url;
                 const dateTime = resultData.test_time.replace(/[^0-9]/g, "_");
-                a.download = `12WD_Speedtest_${dateTime}.pdf`;
+                a.download = `12WD_Speedtest_\${dateTime}.pdf`;
                 document.body.appendChild(a);
                 a.click();
                 a.remove();
