@@ -284,7 +284,7 @@ cat <<'EOT' > ~/speedtest_web/templates/index.html
     </div>
 </body>
 </html>
-EOT'
+EOT
 
 # Step 7: Set up the systemd service
 sudo bash -c 'cat <<EOT > /etc/systemd/system/speedtest_web.service
