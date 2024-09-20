@@ -114,7 +114,7 @@ if __name__ == '__main__':
 EOT
 
 # Creating index.html
-cat <<EOT > ~/speedtest_web/templates/index.html
+cat <<'EOT' > ~/speedtest_web/templates/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
